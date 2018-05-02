@@ -1,0 +1,20 @@
+{
+    "defaultSeverity": "warning",
+    "rulesDirectory": ["tslint-plugin-prettier"],
+    "extends": [
+        "tslint:recommended",
+        "tslint-config-prettier"
+    ],
+    "plugins": [
+        "prettier"
+    ],
+    "jsRules": {},
+    "rules": {
+        "quotemark": [true, "single"],
+        "variable-name": [true, "ban-keywords", "allow-leading-underscore", "check-format"],
+        "max-classes-per-file": false,
+        "semicolon": [true, "never"],
+        "prettier": [true, {"singleQuote": true, "semi": false, "tabWidth": 4, "trailingComma": "es5"}],
+        "no-console": false
+    }
+}
