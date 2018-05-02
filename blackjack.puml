@@ -1,0 +1,46 @@
+@startuml blackjack
+class Main 
+class Deck {
+    +Card draw()
+}
+class Card {
+    +Mark Mark()
+    +number number()
+}
+
+class Game {
+    +initialDraw()
+    +string start()
+    +string judge()
+    +turnOf()
+    -log()
+    -validateBurst(player)
+    +PlayerBase player()
+    +PlayerBase cpu()
+}
+
+abstract class PlayerBase {
+    +Card[] cards()
+    +{abstract} string name()
+    +{abstract} boolean judgeNext()
+    +string draw(deck)
+    +drawMessage(card)
+    +number score()
+}
+
+class Player extends PlayerBase {
+    +boolean judgeNext()
+    +string name()
+}
+class CPU extends PlayerBase {
+    +boolean judgeNext()
+    +string name()
+}
+
+
+Main -> Game : run
+Game "1" -- "1" Deck
+Game "1" - "2" PlayerBase
+Deck "1" o-- "52" Card
+
+@enduml
