@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# exclude generated JS, map files
+src/**/*.js
+src/**/*.js.map
+test/**/*.js
+test/**/*.js.map
