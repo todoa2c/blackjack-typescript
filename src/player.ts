@@ -41,23 +41,7 @@ export abstract class PlayerBase {
         }
 
         // case that have aces
-        let scorePattern = []
-        switch (numOfAce) {
-            case 1:
-                scorePattern = [1, 11]
-                break
-            case 2:
-                scorePattern = [2, 12]
-                break
-            case 3:
-                scorePattern = [3, 13]
-                break
-            case 4:
-                scorePattern = [4, 14]
-                break
-            default:
-                throw new Error('No such number of aces')
-        }
+        const scorePattern = [numOfAce, 10 + numOfAce]
         const scoresWithAce = [
             scorePattern[0] + scoreExcludeAce,
             scorePattern[1] + scoreExcludeAce,
