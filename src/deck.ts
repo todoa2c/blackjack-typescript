@@ -19,6 +19,9 @@ export class Deck {
     }
 
     public draw(): Card {
+        if (this.cards.length === 0) {
+            throw new Error('No such cards')
+        }
         return this.cards.pop()
     }
 

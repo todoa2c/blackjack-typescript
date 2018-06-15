@@ -9,4 +9,14 @@ describe('Deck Class', () => {
         const card2 = deck.draw()
         assert.notDeepEqual(card1, card2)
     })
+
+    it('Number of cards are 52', () => {
+        const deck = new Deck()
+        for (let i = 0; i < 52; i++) {
+            deck.draw()
+        }
+        assert.throws(() => {
+            deck.draw()
+        })
+    })
 })
