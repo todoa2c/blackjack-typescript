@@ -72,8 +72,9 @@ export class Game {
     private validateBurst(player: PlayerBase) {
         if (player.score() > 21) {
             throw new Error(
-                `${player.name}はバーストしました。
-                スコアは${player.score()}です。`
+                `${
+                    player.name
+                }はバーストしました。スコアは${player.score()}です。`
             )
         }
     }
