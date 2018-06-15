@@ -53,14 +53,33 @@ export abstract class PlayerBase {
     }
 }
 
-export class Player extends PlayerBase {
+export interface IPlayerInput {
+    getUserInput(): string
+}
+
+class HumanInput implements IPlayerInput {
+    private _prompt: promptSync.Prompt
     constructor() {
+        this._prompt = promptSync()
+    }
+
+    public getUserInput(): string {
+        return this._prompt('次のカードを引きますか？ [Y/n]').toLowerCase()
+    }
+}
+
+export class Player extends PlayerBase {
+    private _playerInput: IPlayerInput
+    constructor(playerInput?: IPlayerInput) {
         super()
+        this._playerInput = new HumanInput()
+        if (playerInput) {
+            this._playerInput = playerInput
+        }
     }
     public judgeNext(): boolean {
-        const prompt = promptSync()
         while (true) {
-            const result = prompt('次のカードを引きますか? [Y/n]').toLowerCase()
+            const result = this._playerInput.getUserInput()
             if (result[0] === 'y') {
                 return true
             }
