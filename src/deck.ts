@@ -20,7 +20,7 @@ export class Deck {
 
     public draw(): Card {
         if (this.cards.length === 0) {
-            throw new Error('No such cards')
+            throw new Error('No cards in this deck')
         }
         return this.cards.pop()
     }
