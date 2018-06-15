@@ -1,6 +1,5 @@
 import * as assert from 'power-assert'
 import { Card, Mark } from '../src/card'
-import { Deck } from '../src/deck'
 import { Game } from '../src/game'
 import { CPU, Player } from '../src/player'
 
