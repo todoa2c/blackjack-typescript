@@ -3,20 +3,16 @@ import { Card } from '../src/card'
 import { Deck } from '../src/deck'
 
 describe('Deck Class', () => {
-    it('Can draw a card', () => {
+    it('Number of cards are 52 and all cards are different', () => {
         const deck = new Deck()
-        const card1 = deck.draw()
-        const card2 = deck.draw()
-        assert.notDeepEqual(card1, card2)
-    })
-
-    it('Number of cards are 52', () => {
-        const deck = new Deck()
+        const cards = {}
         for (let i = 0; i < 52; i++) {
-            deck.draw()
+            const card = deck.draw()
+            cards[card.toString()] = card
         }
         assert.throws(() => {
             deck.draw()
         })
+        assert(Object.keys(cards).length === 52)
     })
 })
