@@ -8,7 +8,7 @@
     "lint": "tslint --fix -c tslint.json src/**/*.ts test/**/*.ts",
     "build": "tsc",
     "coverage": "istanbul cover _mocha -- test/*_test.js && remap-istanbul -i coverage/coverage.json -o coverage/ts-report -t html",
-    "test": "mocha --compilers ts:espower-typescript/guess test/*_test.ts",
+    "test": "mocha --require ts-node/register test/*_test.ts",
     "game": "node src/main.js"
   },
   "author": "Atsushi Kanaya <todoa2c@gmail.com>",
