@@ -20,7 +20,7 @@
     "babel-core": "^6.26.3",
     "espower-typescript": "^9.0.2",
     "istanbul": "^0.4.5",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "power-assert": "^1.6.1",
     "prettier": "^1.18.2",
     "remap-istanbul": "^0.13.0",
